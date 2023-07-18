@@ -1,0 +1,18 @@
+1. "Saint John": what is writing to this log file?
+Decubiri o procexso que está populando o log:
+  ps -aux | grep xxxx
+Matar o processo:
+  sudo kill -9 IDdoProcesso
+
+2	"Saskatoon": counting IPs.
+Precisamos filtra o primeiro campo , no caso do IP. Execulte o comando abaixo para criar um arquivo so com os IP's
+  cat /home/admin/access.log cut -d ' ' -f 1 > /tmp/ip.txt
+  Explicação: o comando cut tem a função de Corta
+  -d indica o delimitador, no caso ' ':
+  -f 1 indica que é a primeira coluna
+Faça o levantamento de quantas vezes cada IP se repete:
+cat ARQUIVO | sort -d | uniq -c
+ sort ordenar os dados
+ "uniq -c", ele contabiliza quantas repetições foram encontradas.
+ "uniq -u", ele exibe somente linhas que não se repetem.
+ 
